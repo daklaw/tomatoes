@@ -56,16 +56,24 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Percy Jackson, the son of Poseidon, continues his epic journey to fulfill his destiny, as he teams with his demigod friends" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="198" translatesAutoresizingMaskIntoConstraints="NO" id="R8L-9Z-Dq6">
-                                            <rect key="frame" x="115" y="29" width="198" height="84"/>
+                                            <rect key="frame" x="115" y="25" width="198" height="62"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efh-wm-i8M">
+                                            <rect key="frame" x="115" y="87" width="198" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="castLabel" destination="efh-wm-i8M" id="Tyr-yh-NSv"/>
                                     <outlet property="movieTitleLabel" destination="gvw-nI-s3M" id="4q8-0a-EQN"/>
-                                    <outlet property="sypnosisLabel" destination="R8L-9Z-Dq6" id="YlR-Rd-vzc"/>
+                                    <outlet property="synopsisLabel" destination="R8L-9Z-Dq6" id="Jgj-ud-HTo"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

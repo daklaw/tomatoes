@@ -8,10 +8,11 @@
 
 #import "MoviesViewController.h"
 #import "MovieCell.h"
+#import "Movie.h"
 
 @interface MoviesViewController ()
 
-@property (nonatomic, strong) NSArray *movies;
+@property (nonatomic, strong) NSMutableArray *movies;
 
 -(void)reload;
 
@@ -23,6 +24,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        self.movies = [NSMutableArray new];
         // Custom initialization
         [self reload];
     }
@@ -32,6 +34,7 @@
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
+        self.movies = [NSMutableArray new];
         // Custom initialization
         [self reload];
     }
@@ -47,16 +50,16 @@
 # pragma mark - Table View Methods
 
 - (int)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.movies.count;
+    return [self.movies count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MovieCell *cell = (MovieCell *)[tableView dequeueReusableCellWithIdentifier:@"MovieCell"];
-    NSDictionary *movie = self.movies[indexPath.row];
-    
-    cell.movieTitleLabel.text = [movie objectForKey:@"title"];
-    cell.sypnosisLabel.text = [movie objectForKey:@"synopsis"];
+    Movie *movie = self.movies[indexPath.row];
+    cell.movieTitleLabel.text = movie.title;
+    cell.synopsisLabel.text = movie.synopsis;
+    cell.castLabel.text = [movie getCast];
     
     return cell;
 }
@@ -75,9 +78,14 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         NSDictionary *object = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        self.movies = [object objectForKey:@"movies"];
-        [self.tableView reloadData];
+
+        NSArray *movies = [object objectForKey:@"movies"];
+        for (id movie in movies) {
+            Movie *cell = [[Movie alloc] initWithDictionary:movie];
+            [self.movies addObject: cell];
+        }
         
+        [self.tableView reloadData];
         //NSLog(@"%@", object);
     }];
 }
