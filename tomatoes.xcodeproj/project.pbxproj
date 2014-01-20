@@ -14,7 +14,6 @@
 		C527DF8C188BC063000607D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C527DF8B188BC063000607D5 /* main.m */; };
 		C527DF90188BC063000607D5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C527DF8F188BC063000607D5 /* AppDelegate.m */; };
 		C527DF93188BC063000607D5 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C527DF91188BC063000607D5 /* Main_iPhone.storyboard */; };
-		C527DF96188BC063000607D5 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C527DF94188BC063000607D5 /* Main_iPad.storyboard */; };
 		C527DF99188BC063000607D5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C527DF98188BC063000607D5 /* ViewController.m */; };
 		C527DF9B188BC063000607D5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C527DF9A188BC063000607D5 /* Images.xcassets */; };
 		C527DFA2188BC063000607D5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C527DFA1188BC063000607D5 /* XCTest.framework */; };
@@ -22,6 +21,9 @@
 		C527DFA4188BC063000607D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C527DF83188BC063000607D5 /* UIKit.framework */; };
 		C527DFAC188BC063000607D5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C527DFAA188BC063000607D5 /* InfoPlist.strings */; };
 		C527DFAE188BC063000607D5 /* tomatoesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C527DFAD188BC063000607D5 /* tomatoesTests.m */; };
+		C527DFB9188BC0B7000607D5 /* MoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C527DFB8188BC0B7000607D5 /* MoviesViewController.m */; };
+		C527DFBC188BC7ED000607D5 /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C527DFBB188BC7ED000607D5 /* MovieCell.m */; };
+		C527DFBF188BCDF2000607D5 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = C527DFBE188BCDF2000607D5 /* Movie.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +48,6 @@
 		C527DF8E188BC063000607D5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C527DF8F188BC063000607D5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C527DF92188BC063000607D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		C527DF95188BC063000607D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		C527DF97188BC063000607D5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		C527DF98188BC063000607D5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C527DF9A188BC063000607D5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -55,6 +56,12 @@
 		C527DFA9188BC063000607D5 /* tomatoesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "tomatoesTests-Info.plist"; sourceTree = "<group>"; };
 		C527DFAB188BC063000607D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C527DFAD188BC063000607D5 /* tomatoesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tomatoesTests.m; sourceTree = "<group>"; };
+		C527DFB7188BC0B7000607D5 /* MoviesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoviesViewController.h; sourceTree = "<group>"; };
+		C527DFB8188BC0B7000607D5 /* MoviesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviesViewController.m; sourceTree = "<group>"; };
+		C527DFBA188BC7ED000607D5 /* MovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieCell.h; sourceTree = "<group>"; };
+		C527DFBB188BC7ED000607D5 /* MovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
+		C527DFBD188BCDF2000607D5 /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
+		C527DFBE188BCDF2000607D5 /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +91,8 @@
 		C527DF73188BC062000607D5 = {
 			isa = PBXGroup;
 			children = (
+				C527DFBD188BCDF2000607D5 /* Movie.h */,
+				C527DFBE188BCDF2000607D5 /* Movie.m */,
 				C527DF85188BC063000607D5 /* tomatoes */,
 				C527DFA7188BC063000607D5 /* tomatoesTests */,
 				C527DF7E188BC062000607D5 /* Frameworks */,
@@ -117,11 +126,14 @@
 				C527DF8E188BC063000607D5 /* AppDelegate.h */,
 				C527DF8F188BC063000607D5 /* AppDelegate.m */,
 				C527DF91188BC063000607D5 /* Main_iPhone.storyboard */,
-				C527DF94188BC063000607D5 /* Main_iPad.storyboard */,
 				C527DF97188BC063000607D5 /* ViewController.h */,
 				C527DF98188BC063000607D5 /* ViewController.m */,
 				C527DF9A188BC063000607D5 /* Images.xcassets */,
 				C527DF86188BC063000607D5 /* Supporting Files */,
+				C527DFB7188BC0B7000607D5 /* MoviesViewController.h */,
+				C527DFB8188BC0B7000607D5 /* MoviesViewController.m */,
+				C527DFBA188BC7ED000607D5 /* MovieCell.h */,
+				C527DFBB188BC7ED000607D5 /* MovieCell.m */,
 			);
 			path = tomatoes;
 			sourceTree = "<group>";
@@ -231,7 +243,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C527DF96188BC063000607D5 /* Main_iPad.storyboard in Resources */,
 				C527DF9B188BC063000607D5 /* Images.xcassets in Resources */,
 				C527DF93188BC063000607D5 /* Main_iPhone.storyboard in Resources */,
 				C527DF8A188BC063000607D5 /* InfoPlist.strings in Resources */,
@@ -253,9 +264,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C527DFBF188BCDF2000607D5 /* Movie.m in Sources */,
 				C527DF99188BC063000607D5 /* ViewController.m in Sources */,
+				C527DFBC188BC7ED000607D5 /* MovieCell.m in Sources */,
 				C527DF90188BC063000607D5 /* AppDelegate.m in Sources */,
 				C527DF8C188BC063000607D5 /* main.m in Sources */,
+				C527DFB9188BC0B7000607D5 /* MoviesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,14 +306,6 @@
 				C527DF92188BC063000607D5 /* Base */,
 			);
 			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		C527DF94188BC063000607D5 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C527DF95188BC063000607D5 /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		C527DFAA188BC063000607D5 /* InfoPlist.strings */ = {
