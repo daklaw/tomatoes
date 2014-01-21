@@ -19,7 +19,6 @@
 
 -(void)refreshData;
 -(void)reload;
--(void)doNothing;
 
 @end
 
@@ -30,6 +29,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.movies = [NSMutableArray new];
+        self.title = @"Movies";
         // Custom initialization
     }
     return self;
@@ -39,6 +39,7 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         self.movies = [NSMutableArray new];
+        self.title = @"Movies";
         // Custom initialization
 
     }
@@ -50,9 +51,10 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    [SVProgressHUD showWithStatus:@"Loading..."];
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc]
                                         init];
-    refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Refreshing"];
+    refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Reloading Movies"];
     [refreshControl addTarget:self action:@selector(refreshData) forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refreshControl;
     [self reload];
@@ -60,12 +62,13 @@
 
 # pragma mark - Table View Methods
 
-- (int)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.movies count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     MovieCell *cell = (MovieCell *)[tableView dequeueReusableCellWithIdentifier:@"MovieCell"];
     Movie *movie = self.movies[indexPath.row];
     cell.movieTitleLabel.text = movie.title;
@@ -89,7 +92,6 @@
     [self performSelector:@selector(reload) withObject:nil];
 }
 - (void)reload {
-    [SVProgressHUD showWithStatus:@"Loading..."];
     NSString *url = @"http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?apikey=g9au4hv6khv6wzvzgt55gpqs";
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
@@ -104,19 +106,17 @@
                 [self.movies addObject: cell];
             }
         
-            [NSThread sleepForTimeInterval:2];
             [self.tableView reloadData];
+            
+            // End refresh and dismiss HUD if it exists
+            [self.refreshControl endRefreshing];
             [SVProgressHUD dismiss];
         }
         else {
             [SVProgressHUD showErrorWithStatus:@"Network error.  Please try again later"];
         }
 
-        //NSLog(@"%@", object);
     }];
-}
-
-- (void)doNothing {
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
