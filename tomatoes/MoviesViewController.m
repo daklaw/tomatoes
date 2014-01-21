@@ -9,6 +9,7 @@
 #import "MoviesViewController.h"
 #import "MovieCell.h"
 #import "Movie.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface MoviesViewController ()
 
@@ -60,6 +61,9 @@
     cell.movieTitleLabel.text = movie.title;
     cell.synopsisLabel.text = movie.synopsis;
     cell.castLabel.text = [movie getCast];
+    [cell.image setImageWithURL:movie.image_url];
+    
+    NSLog(@"%@", movie.image_url);
     
     return cell;
 }

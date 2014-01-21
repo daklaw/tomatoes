@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3730AB6C64D543B9AA8263F7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EBB1B292C94800A2B71003 /* libPods.a */; };
 		C527DF80188BC062000607D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C527DF7F188BC062000607D5 /* Foundation.framework */; };
 		C527DF82188BC063000607D5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C527DF81188BC063000607D5 /* CoreGraphics.framework */; };
 		C527DF84188BC063000607D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C527DF83188BC063000607D5 /* UIKit.framework */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		66EBB1B292C94800A2B71003 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		90FA7436C2904BE2BCFA7AF3 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		C527DF7C188BC062000607D5 /* tomatoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tomatoes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C527DF7F188BC062000607D5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C527DF81188BC063000607D5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,6 +65,9 @@
 		C527DFBB188BC7ED000607D5 /* MovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
 		C5F6724C188DCEBD00BD397F /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
 		C5F6724D188DCEBD00BD397F /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
+		C5F6770C188E108900BD397F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		C5F6770D188E108900BD397F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C5F677F1188E110200BD397F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,7 @@
 				C527DF82188BC063000607D5 /* CoreGraphics.framework in Frameworks */,
 				C527DF84188BC063000607D5 /* UIKit.framework in Frameworks */,
 				C527DF80188BC062000607D5 /* Foundation.framework in Frameworks */,
+				3730AB6C64D543B9AA8263F7 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +102,7 @@
 				C527DFA7188BC063000607D5 /* tomatoesTests */,
 				C527DF7E188BC062000607D5 /* Frameworks */,
 				C527DF7D188BC062000607D5 /* Products */,
+				90FA7436C2904BE2BCFA7AF3 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,10 +118,14 @@
 		C527DF7E188BC062000607D5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C5F677F1188E110200BD397F /* SenTestingKit.framework */,
+				C5F6770C188E108900BD397F /* Security.framework */,
+				C5F6770D188E108900BD397F /* SystemConfiguration.framework */,
 				C527DF7F188BC062000607D5 /* Foundation.framework */,
 				C527DF81188BC063000607D5 /* CoreGraphics.framework */,
 				C527DF83188BC063000607D5 /* UIKit.framework */,
 				C527DFA1188BC063000607D5 /* XCTest.framework */,
+				66EBB1B292C94800A2B71003 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -174,9 +186,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C527DFB1188BC063000607D5 /* Build configuration list for PBXNativeTarget "tomatoes" */;
 			buildPhases = (
+				D92170D3DA704B1F89F160C0 /* Check Pods Manifest.lock */,
 				C527DF78188BC062000607D5 /* Sources */,
 				C527DF79188BC062000607D5 /* Frameworks */,
 				C527DF7A188BC062000607D5 /* Resources */,
+				ACE10A8855E1474AB426B9BB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -258,6 +272,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		ACE10A8855E1474AB426B9BB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D92170D3DA704B1F89F160C0 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C527DF78188BC062000607D5 /* Sources */ = {
@@ -395,9 +442,14 @@
 		};
 		C527DFB2188BC063000607D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90FA7436C2904BE2BCFA7AF3 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "tomatoes/tomatoes-Prefix.pch";
 				INFOPLIST_FILE = "tomatoes/tomatoes-Info.plist";
@@ -408,9 +460,14 @@
 		};
 		C527DFB3188BC063000607D5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90FA7436C2904BE2BCFA7AF3 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "tomatoes/tomatoes-Prefix.pch";
 				INFOPLIST_FILE = "tomatoes/tomatoes-Info.plist";

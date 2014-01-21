@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *synopsis;
+@property (nonatomic, strong) NSURL *image_url;
 @property (nonatomic, strong) NSMutableArray *cast;
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;
