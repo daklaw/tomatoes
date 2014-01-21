@@ -11,12 +11,15 @@
 #import "MovieCell.h"
 #import "Movie.h"
 #import "UIImageView+AFNetworking.h"
+#import "SVProgressHUD.h"
 
 @interface MoviesViewController ()
 
 @property (nonatomic, strong) NSMutableArray *movies;
 
+-(void)refreshData;
 -(void)reload;
+-(void)doNothing;
 
 @end
 
@@ -28,7 +31,6 @@
     if (self) {
         self.movies = [NSMutableArray new];
         // Custom initialization
-        [self reload];
     }
     return self;
 }
@@ -38,7 +40,7 @@
     if (self) {
         self.movies = [NSMutableArray new];
         // Custom initialization
-        [self reload];
+
     }
     return self;
 }
@@ -47,6 +49,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc]
+                                        init];
+    refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Refreshing"];
+    [refreshControl addTarget:self action:@selector(refreshData) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refreshControl;
+    [self reload];
 }
 
 # pragma mark - Table View Methods
@@ -75,22 +84,39 @@
 
 # pragma mark - Private Methods
 
+- (void)refreshData {
+    [self.refreshControl endRefreshing];
+    [self performSelector:@selector(reload) withObject:nil];
+}
 - (void)reload {
+    [SVProgressHUD showWithStatus:@"Loading..."];
     NSString *url = @"http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?apikey=g9au4hv6khv6wzvzgt55gpqs";
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        NSDictionary *object = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        NSInteger responseCode = [(NSHTTPURLResponse *)response statusCode];
+        if (!connectionError && responseCode == 200) {
+            NSDictionary *object = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
 
-        NSArray *movies = [object objectForKey:@"movies"];
-        for (id movie in movies) {
-            Movie *cell = [[Movie alloc] initWithDictionary:movie];
-            [self.movies addObject: cell];
-        }
+            NSArray *movies = [object objectForKey:@"movies"];
+            for (id movie in movies) {
+                Movie *cell = [[Movie alloc] initWithDictionary:movie];
+                [self.movies addObject: cell];
+            }
         
-        [self.tableView reloadData];
+            [NSThread sleepForTimeInterval:2];
+            [self.tableView reloadData];
+            [SVProgressHUD dismiss];
+        }
+        else {
+            [SVProgressHUD showErrorWithStatus:@"Network error.  Please try again later"];
+        }
+
         //NSLog(@"%@", object);
     }];
+}
+
+- (void)doNothing {
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
