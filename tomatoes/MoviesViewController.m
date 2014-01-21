@@ -7,6 +7,7 @@
 //
 
 #import "MoviesViewController.h"
+#import "MovieViewController.h"
 #import "MovieCell.h"
 #import "Movie.h"
 #import "UIImageView+AFNetworking.h"
@@ -61,9 +62,7 @@
     cell.movieTitleLabel.text = movie.title;
     cell.synopsisLabel.text = movie.synopsis;
     cell.castLabel.text = [movie getCast];
-    [cell.image setImageWithURL:movie.image_url];
-    
-    NSLog(@"%@", movie.image_url);
+    [cell.image setImageWithURL:movie.profile_image_url];
     
     return cell;
 }
@@ -92,6 +91,15 @@
         [self.tableView reloadData];
         //NSLog(@"%@", object);
     }];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    UITableViewCell *selectedCell = (UITableViewCell *)sender;
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:selectedCell];
+    Movie *movie = self.movies[indexPath.row];
+    
+    MovieViewController *movieViewController = (MovieViewController *)segue.destinationViewController;
+    movieViewController.movie = movie;
 }
 
 @end

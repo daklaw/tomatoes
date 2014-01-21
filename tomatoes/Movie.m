@@ -16,7 +16,8 @@
         self.cast = [NSMutableArray new];
         self.title = dictionary[@"title"];
         self.synopsis = dictionary[@"synopsis"];
-        self.image_url = [NSURL URLWithString:dictionary[@"posters"][@"profile"]];
+        self.profile_image_url = [NSURL URLWithString:dictionary[@"posters"][@"profile"]];
+        self.orig_image_url = [NSURL URLWithString:dictionary[@"posters"][@"original"]];
         NSArray *abridged_cast = dictionary[@"abridged_cast"];
         for (id member in abridged_cast) {
             [self.cast addObject:member[@"name"]];

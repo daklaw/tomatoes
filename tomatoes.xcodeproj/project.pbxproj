@@ -24,6 +24,8 @@
 		C527DFAE188BC063000607D5 /* tomatoesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C527DFAD188BC063000607D5 /* tomatoesTests.m */; };
 		C527DFB9188BC0B7000607D5 /* MoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C527DFB8188BC0B7000607D5 /* MoviesViewController.m */; };
 		C527DFBC188BC7ED000607D5 /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C527DFBB188BC7ED000607D5 /* MovieCell.m */; };
+		C54D9A91188E632D00FF0924 /* MovieImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C54D9A90188E632D00FF0924 /* MovieImageCell.m */; };
+		C54D9A94188E705D00FF0924 /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C54D9A93188E705D00FF0924 /* MovieViewController.m */; };
 		C5F6724E188DCEBD00BD397F /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F6724D188DCEBD00BD397F /* Movie.m */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +65,10 @@
 		C527DFB8188BC0B7000607D5 /* MoviesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviesViewController.m; sourceTree = "<group>"; };
 		C527DFBA188BC7ED000607D5 /* MovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieCell.h; sourceTree = "<group>"; };
 		C527DFBB188BC7ED000607D5 /* MovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
+		C54D9A8F188E632D00FF0924 /* MovieImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieImageCell.h; sourceTree = "<group>"; };
+		C54D9A90188E632D00FF0924 /* MovieImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieImageCell.m; sourceTree = "<group>"; };
+		C54D9A92188E705D00FF0924 /* MovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieViewController.h; sourceTree = "<group>"; };
+		C54D9A93188E705D00FF0924 /* MovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieViewController.m; sourceTree = "<group>"; };
 		C5F6724C188DCEBD00BD397F /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
 		C5F6724D188DCEBD00BD397F /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
 		C5F6770C188E108900BD397F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -146,6 +152,10 @@
 				C527DFBB188BC7ED000607D5 /* MovieCell.m */,
 				C5F6724C188DCEBD00BD397F /* Movie.h */,
 				C5F6724D188DCEBD00BD397F /* Movie.m */,
+				C54D9A8F188E632D00FF0924 /* MovieImageCell.h */,
+				C54D9A90188E632D00FF0924 /* MovieImageCell.m */,
+				C54D9A92188E705D00FF0924 /* MovieViewController.h */,
+				C54D9A93188E705D00FF0924 /* MovieViewController.m */,
 			);
 			path = tomatoes;
 			sourceTree = "<group>";
@@ -316,7 +326,9 @@
 				C527DFBC188BC7ED000607D5 /* MovieCell.m in Sources */,
 				C527DF90188BC063000607D5 /* AppDelegate.m in Sources */,
 				C527DF8C188BC063000607D5 /* main.m in Sources */,
+				C54D9A91188E632D00FF0924 /* MovieImageCell.m in Sources */,
 				C527DFB9188BC0B7000607D5 /* MoviesViewController.m in Sources */,
+				C54D9A94188E705D00FF0924 /* MovieViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
